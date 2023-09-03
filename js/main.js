@@ -60,6 +60,10 @@ $(document).ready(function () {
     $("#bars").addClass("fa-x");
   }
   // // // End Side Bar
+
+  $("#side-bar .nav-logo img").click(function () {
+    location.reload();
+  })
   // home data api
   async function getHomeData() {
     let res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);

@@ -27,6 +27,7 @@ body {
 }
 #side-bar img {
   width: 50px;
+  cursor: pointer;
 }
 .inner-sideBar {
   background-color: var(--body-color);
