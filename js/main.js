@@ -612,7 +612,8 @@ loadFadeIn()
     $('#search').addClass('d-none');
     $('#area').addClass('d-none');
     $('#ingredients').addClass('d-none');
-    $('#contact').removeClass('d-none');
+    document.getElementById("contact").classList.replace('d-none','d-flex')
+    // $('#contact').addClass('d-flex');
     openNav();
 
     
