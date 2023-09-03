@@ -184,9 +184,11 @@ loadFadeIn()
     $("#home").addClass('d-none');
     $("#meal-description").addClass('d-none')
     $("#area").addClass('d-none')
+    $("#categories").addClass('d-none')
     $("#ingredients").addClass('d-none')
     $("#contact").addClass('d-none')
     $('#search').removeClass('d-none');
+    openNav();
 
   })
 
@@ -241,15 +243,6 @@ loadFadeIn()
 
   // search by letter
 
-  $("#search-link").click(function () {
-
-    $("#home").addClass('d-none');
-    $('#search').removeClass('d-none');
-    $("#side-bar").animate({ left: -innerWidth }, 700);
-    $("#bars").addClass("fa-align-justify");
-    $("#bars").removeClass("fa-x");
-
-  })
   let searchLetterResult = [];
   $("#searchLetter").keyup(async function () {
     let x = document.getElementById('searchLetter').value;
@@ -302,6 +295,7 @@ loadFadeIn()
   $("#category-link").click(async function () {
     $("#home").addClass('d-none');
     $('#area').addClass('d-none');
+    $("#meal-description").addClass('d-none')
     $('#search').addClass('d-none');
     $('#ingredients').addClass('d-none');
     $('#contact').addClass('d-none');
@@ -403,6 +397,7 @@ loadFadeIn()
   $("#area-link").click(async function () {
     $("#home").addClass('d-none');
     $('#categories').addClass('d-none');
+    $("#meal-description").addClass('d-none')
     $('#search').addClass('d-none');
     $('#ingredients').addClass('d-none');
     $('#contact').addClass('d-none');
@@ -504,11 +499,13 @@ loadFadeIn()
   $("#ingred-link").click(async function () {
     $("#home").addClass('d-none');
     $('#categories').addClass('d-none');
+    $("#meal-description").addClass('d-none')
     $('#search').addClass('d-none');
     $('#area').addClass('d-none');
     $('#contact').addClass('d-none');
     $('#ingredients').removeClass('d-none');
     openNav();
+
     await getIngredData();
   })
   let dataListIngred = [];
@@ -609,14 +606,13 @@ loadFadeIn()
   $("#contact-link").click(function () {
     $("#home").addClass('d-none');
     $('#categories').addClass('d-none');
+    $("#meal-description").addClass('d-none')
     $('#search').addClass('d-none');
     $('#area').addClass('d-none');
     $('#ingredients').addClass('d-none');
     document.getElementById("contact").classList.replace('d-none','d-flex')
-    // $('#contact').addClass('d-flex');
     openNav();
 
-    
   })
   $("#Name").keyup(() => {
     // console.log("name");
@@ -691,9 +687,9 @@ loadFadeIn()
       ageRegexValid() == true &&
       passwordRegexValid() == true &&
       repasswordRegexValid() == true) {
-        submit.removeAttribute("disabled")
+        document.getElementById('submit').removeAttribute("disabled")
       } else {
-        submit.setAttribute("disabled", true)
+        document.getElementById('submit').setAttribute("disabled", true)
       }
 }
 
@@ -733,7 +729,7 @@ loadFadeIn()
   }
 
   function repasswordRegexValid() {
-    return document.getElementById("repasswordInput").value == document.getElementById("Repassword").value
+    return document.getElementById("Repassword").value === document.getElementById("Password").value
   }
   // // // ===============================================End Get Contacts==========================================
 
