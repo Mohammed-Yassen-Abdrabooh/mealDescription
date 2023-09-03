@@ -1,0 +1,122 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: #0d0d0d;
+  --white-color: #fff;
+  --animate-delay: 0.1s;
+}
+
+body {
+  background-color: var(--body-color);
+  overflow: hidden;
+}
+
+/* =========================== SideBar ============================== */
+#side-bar {
+  background-color: var(--white-color);
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+}
+#side-bar img {
+  width: 50px;
+}
+.inner-sideBar {
+  background-color: var(--body-color);
+  padding: 15px;
+}
+
+.inner-sideBar li {
+  padding: 5px;
+  cursor: pointer;
+}
+#side-bar .logo-icons {
+  background-color: var(--white-color);
+}
+#side-bar .nav-logo i{
+  cursor: pointer;
+}
+
+
+/* ===================================== Start Home Section ===================================== */
+/* #home {
+  
+} */
+
+.item-pic {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.layer {
+  background-color: #f9f6f6ca;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  transition:all 0.5s;
+}
+.item-pic:hover .layer{
+  top:0;
+}
+
+/* ===================================== Start Loading Section ===================================== */
+
+#loading {
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index:999;
+}
+/* ===================================== Start instruction ===================================== */
+
+.recipes {
+  background-color: #CFF4FC;
+  color:#055160;
+}
+.tags {
+  background-color: #F8D7DA;
+  color:#842029;
+
+}
+
+/* =====================================  Section search ===================================== */
+
+#search .form-control {
+  background-color: var(--body-color);
+  
+}
+
+#search input:focus {
+  background-color: var(--body-color);
+}
+#search input::placeholder {
+  color: #7f7c7c;
+}
+
+/* =====================================  Section Contact ===================================== */
+#area .item-area{
+cursor: pointer;
+}
+
+
+#ingredients .item-ingred {
+  cursor: pointer;
+}
+
+
+
+#contact span {
+  background-color: #F8D7DA;
+  color: #B55529;
+}

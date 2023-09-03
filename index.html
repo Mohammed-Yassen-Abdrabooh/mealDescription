@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="website to present meals,its category and the  ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Yummy</title>
+  <!-- ================ Favicon ================= -->
+  <!-- <link rel="icon" href="./images/logo.png"> -->
+  <!-- ================ Font Awesome ================= -->
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <!-- ================ Animate Css================= -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    referrerpolicy="no-referrer" />
+  <!-- ================ Bootstrap Style ================= -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <!-- ================ Main Style================= -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- loading -->
+  <section id="loading" class="d-flex justify-content-center align-items-center">
+    <div class="spinner">
+      <i class="fas fa-spinner fa-4x text-white fa-spin"></i>
+    </div>
+  </section>
+  <!-- End loading -->
+
+  <section id="side-bar">
+    <div class="inner-sideBar d-flex flex-column justify-content-between">
+      <ul class="list-unstyled text-white p-2 overflow-hidden ">
+        <li class="my-3 animate__animated " id="search-link">Search</li>
+        <li class="my-3 animate__animated animate__delay-2s " id="category-link">Categories</li>
+        <li class="my-3 animate__animated animate__delay-3s " id="area-link">Area</li>
+        <li class="my-3 animate__animated animate__delay-4s " id="ingred-link">ingredients</li>
+        <li class="my-3 animate__animated animate__delay-5s " id="contact-link">Contact Us</li>
+      </ul>
+      <div class="footer-sideBar text-white p-2">
+        <div class="foot-icons text-white">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <p>Copyright Â© 2019 All Rights<br>Reserved.</p>
+      </div>
+    </div>
+    <div class="nav-logo d-flex flex-column justify-content-between align-items-center py-3 px-2">
+      <img src="./images/logo.png" alt="logo">
+      <i class="fa-solid open-close-icon fa-2x fa-align-justify" id="bars"></i>
+      <div class="nav-icon d-flex flex-column ">
+        <i class="fa-solid fa-globe py-2"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- End SideBar -->
+
+  <!-- ========================================= Home Section ========================================= -->
+  <section id="home" class="py-5">
+    <div class="container">
+      <div class="row g-4" id="meal-row-body">
+      </div>
+    </div>
+  </section>
+  <!-- ============================== Meal Description onclick img =============================== -->
+  <section id="meal-description" class="">
+    <div class="container">
+      <div class="row g-2 p-5" id="row-desc-clicked">
+        <!-- <div class="col-md-4 ">
+          <div class="meal-clicked text-white rounded-3 overflow-hidden">
+            <img src="./images/tkxquw1628771028.jpg" class="w-100" alt="">
+          </div>
+          <h2 class="text-white p-2">Corba</h2>
+
+        </div>
+        <div class="col-md-8">
+          <div class="instructon px-3 mx-2 text-white">
+            <h2 class="text-white text-capitalize">instructions</h2>
+            <p>oak the beans in water to cover overnight.Drain. If skinless beans are unavailable, rub to loosen the skins, then
+            discard the skins. Pat the beans dry with a towel. Grind the beans in a food mill or meat grinder.If neither appliance
+            is available, process them in a food processor but only until the beans form a paste. (If blended too smoothly, the
+            batter tends to fall apart during cooking.) Add the scallions, garlic, cilantro, cumin, baking powder, cayenne, salt,
+            pepper, and coriander, if using. Refrigerate for at least 30 minutes. Shape the bean mixture into 1-inch balls.Flatten
+            slightly and coat with flour. Heat at least 1½-inches of oil over medium heat to 365 degrees. Fry the patties in
+            batches, turning once, until golden brown on all sides, about 5 minutes.Remove with a wire mesh skimmer or slotted
+            spoon. Serve as part of a meze or in pita bread with tomato-cucumber salad and tahina sauce.</p>
+            <h3><span>Area:</span> Egyptian</h3>
+            <h3><span>Category:</span> Vegetarian</h3>
+            <h3>Recipes:
+              <ul class="list-unstyled d-flex  flex-wrap">
+                <li class="recipes py-2 px-1 fs-6 m-2 rounded-2 fw-medium"><small >3 cups Broad Beans</small></li>
+              </ul>
+            </h3>
+            <h3><span>Tags:</span>
+              <ul class="list-unstyled d-flex flex-wrap m-1">
+                <li class="tags py-2 px-1 fs-5 m-2 rounded-2 fw-semibold"><small>Treat</small></li>
+              </ul>
+            </h3>
+            <a href="#" class="btn btn-success">Source</a>
+            <a href="#" class="btn btn-danger">Youtube</a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- ============================== Search Section =============================== -->
+  <section id="search" class="d-none">
+    <div class="container">
+      <div class="row g-3 w-75 m-auto">
+        <div class=" col-md-6">
+          <input type="text" placeholder="Search By Name" class="form-control text-white" id="searchName">
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Search By First Letter" maxlength="1" class="form-control text-white"
+            id="searchLetter">
+        </div>
+      </div>
+      <div class="row g-4 m-5 " id="search-row">
+        <!-- <div class="col-md-3">
+          <div class="item-pic position-relative">
+            <img src="./images/tkxquw1628771028.jpg" class="w-100" alt="meal">
+            <div class="layer p-3 d-flex align-items-center">
+              <h2>corba</h2>
+            </div>
+          </div>
+        </div>  -->
+      </div>
+    </div>
+  </section>
+  <!-- ============================== Categories Section =============================== -->
+  <section id="categories" class="d-none">
+    <div class="container">
+      <div class="row g-4 m-5 " id="category-row">
+        <!-- <div class="col-md-3">
+          <div class="item-pic position-relative">
+            <img src="./images/beef.png" class="w-100" alt="meal">
+            <div class="layer p-3 text-center ">
+              <h2>corba</h2>
+              <p>Beef is the culinary name for meat from cattle, particularly skeletal muscle. Humans have been eating
+                beef since
+                prehistoric times.[1]</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- ============================== Area Section =============================== -->
+  <section id="area" class="d-none">
+    <div class="container">
+      <div class="row g-4 m-5 " id="area-row">
+        <!-- <div class="col-md-3">
+            <div class="item-area  position-relative text-white text-center ">
+              <i class="fa-solid fa-house-laptop fa-5x "></i>
+              <h2 >American</h2>
+            </div>
+          </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- ============================== ingredients Section =============================== -->
+  <section id="ingredients" class="d-none">
+    <div class="container">
+      <div class="row g-4 m-5 " id="ingredients-row">
+        <!-- <div class="col-md-3">
+            <div class="item-ingred  position-relative text-white text-center ">
+              <i class="fa-solid fa-drumstick-bite fa-4x"></i>
+              <h2 >Chicken</h2>
+              <p >The chicken is a type of domesticated fowl, a subspecies of the red junglefowl (Gallus gallus). It is one of</p>
+            </div>
+          </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- ============================== Contact US Section =============================== -->
+  <section id="contact" class="d-flex justify-content-center align-items-center vh-100 ">
+    <div class="container px-5 mx-5">
+      <div class="row gy-4">
+        <div class="parent col-md-12">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input id="Name" type="text" placeholder="Enter Your Name" class="form-control mb-1 mb-3">
+              <span id="NameAlert" class="w-100 mt-2 px-2 d-none rounded-3 text-center py-2">Special
+                characters and numbers not allowed</span>
+            </div>
+
+            <div class="col-md-6">
+              <input id="Email" type="text" placeholder="Enter Your Email" class="form-control mb-3">
+              <span id="EmailAlert" class="w-100 mt-2 d-none px-2 rounded-3 text-center py-2">Email not
+                valid *exemple@yyy.zzz</span>
+            </div>
+
+          </div>
+        </div>
+        <div class="parent col-md-12">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input id="Phone" type="text" placeholder="Enter Your Phone" class="form-control mb-3">
+              <span id="PhoneAlert" class="w-100 mt-2 d-none px-2 rounded-3 text-center py-2">Enter valid
+                Phone Number</span>
+            </div>
+
+            <div class="col-md-6">
+              <input id="Age" type="text" placeholder="Enter Your Age" class="form-control mb-3">
+              <span id="AgeAlert" class="w-100 mt-2 d-none px-2 rounded-3 text-center py-2">Enter valid
+                age</span>
+            </div>
+
+          </div>
+        </div>
+        <div class="parent col-md-12">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input id="Password" type="text" placeholder="Enter Your Password" class="form-control mb-3">
+              <span id="PasswordAlert" class="w-100 mt-2 d-none px-2 rounded-3 text-center py-2">Enter
+                valid password Minimum eight characters, at least one letter and one number:</span>
+            </div>
+
+            <div class="col-md-6">
+              <input id="Repassword" type="text" placeholder="Repassword" class="form-control mb-3">
+              <span id="RepasswordAlert" class="w-100 mt-2 d-none px-2 rounded-3 text-center py-2">Enter
+                valid repassword</span>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <!-- ?submit contact btn -->
+      <div class="text-center mt-3">
+        <button id="submit" disabled class="btn btn-outline-danger">submit</button>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- side bar -->
+
+<!-- <div class="logo w-50">
+              <img src="./images/logo.png" class="w-50" alt="">
+            </div> 
+            <div class="nav-icon">
+              <i class="fa-solid open-close-icon fa-2x fa-align-justify"></i>
+            </div> 
+            <div>
+              <i class="fa-solid fa-share-nodes"></i>
+              <i class="fa-solid fa-globe d-block"></i>
+            </div> -->
