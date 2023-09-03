@@ -636,8 +636,8 @@ loadFadeIn()
       $("#EmailAlert").addClass("d-none");
       $("#EmailAlert").removeClass("d-block");
     } else {
-      $("#NameAlert").removeClass("d-none");
-      $("#NameAlert").addClass("d-block");
+      $("#EmailAlert").removeClass("d-none");
+      $("#EmailAlert").addClass("d-block");
     }
     checkAll();
   })
