@@ -9,28 +9,21 @@ let clickedCategory = [];
 $(document).ready(function () {
   $('#loading').fadeOut(1000, function () {
     $('body').css("overflow", "auto")
-    $("#loading").remove()
+    $("#loading").addClass('d-none')
   });
 
 
-  // // // Start SideBar
-  // allLi.eq(0).slideUp(1000)
-  // allLi.eq(1).slideUp(500)
-  // allLi.eq(2).slideUp(500)
-  // allLi.eq(3).slideUp(500)
-  // allLi.eq(4).slideUp(500)
-
   // inner loading functions
   function loadFadeIn() {
-    $(".spinner").fadeIn(100, function () {
-      $("#loading").css("zIndex", 999).fadeIn(100)
-    })
+    $('#loading').removeClass('d-none');
+    $('#loading').fadeIn(0)
+    $('#loading').css("z-index","99")
   }
-
   function loadFadeOut() {
-    $(".spinner").fadeOut(1000, function () {
-      $("#loading").fadeOut(1000)
+    $('#loading').fadeOut(500, () => {
+      $('#loading').addClass('d-none')
     })
+    
   }
 // End inner Loading function
   let innerWidth = $(".inner-sideBar").innerWidth()
@@ -75,9 +68,9 @@ $(document).ready(function () {
   }
   // clicked img data api ========================================================================>>>>&&&
   async function getClickedImgData(id) {
-loadFadeIn()
-    let res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-    let imgData = await res.json();
+    loadFadeIn()
+      let res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+      imgData = await res.json();
     loadFadeOut()
     return imgData.meals;
   }
@@ -164,21 +157,6 @@ loadFadeIn()
     descRow.innerHTML = box;
   }
 
-
-
-
-  // strMealThumb
-  // strMeal
-  // strInstructions
-  // strArea
-  // strCategory
-  // strMeasure1
-  // strTags
-  // strSource
-  // strYoutube
-
-
-
   // // get search data by name
   $("#search-link").click(function () {
     $("#home").addClass('d-none');
@@ -203,7 +181,7 @@ loadFadeIn()
   })
 
   async function getSearchNameData(seaValue) {
-loadFadeIn()
+    loadFadeIn()
     let searchRes = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${seaValue}`)
     let searchData = await searchRes.json();
     loadFadeOut()
@@ -254,7 +232,7 @@ loadFadeIn()
   })
 
   async function getSearchLetterData(seaValue) {
-loadFadeIn()
+    loadFadeIn()
     let searchRes = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${seaValue}`)
     let searchData = await searchRes.json();
     loadFadeOut()
@@ -305,13 +283,11 @@ loadFadeIn()
   })
   let dataList = [];
   async function getCategoryData() {
-loadFadeIn()
+    loadFadeIn()
     let res = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
     let categData = await res.json();
     dataList = categData.categories;
     loadFadeOut()
-    console.log(categData);
-
     categoryDisplay(dataList);
   }
 
@@ -347,11 +323,10 @@ loadFadeIn()
 
   // // =========================================Get Category List===========================================
   async function getCategoryList(dd) {
-loadFadeIn()
+    loadFadeIn()
     let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${dd}`);
     let cateFilter = await res.json();
     loadFadeOut()
-    // console.log("bozoo", cateFilter);
     return cateFilter.meals;
   }
 
@@ -447,7 +422,7 @@ loadFadeIn()
 
   // // ======================== Get Area List ================================
   async function getAreaList(areaName) {
-loadFadeIn()
+    loadFadeIn()
     let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${areaName}`);
     let areaFilter = await res.json();
     loadFadeOut()
@@ -510,13 +485,11 @@ loadFadeIn()
   })
   let dataListIngred = [];
   async function getIngredData() {
-loadFadeIn()
+    loadFadeIn()
     let res = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`);
     let ingredData = await res.json();
     dataListIngred = ingredData.meals.slice(0, 20);
     loadFadeOut()
-    console.log(dataListIngred);
-
     ingredDisplay(dataListIngred);
   }
 
@@ -553,7 +526,7 @@ loadFadeIn()
   // // // ingred list
 
   async function getingredList(ingredName) {
-loadFadeIn()
+    loadFadeIn()
     let res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredName}`);
     let ingredFilter = await res.json();
     loadFadeOut()
@@ -615,7 +588,6 @@ loadFadeIn()
 
   })
   $("#Name").keyup(() => {
-    // console.log("name");
     if (nameRegexValid() == true) {
       $("#NameAlert").addClass("d-none");
       $("#NameAlert").removeClass("d-block");
@@ -693,21 +665,6 @@ loadFadeIn()
       }
 }
 
-
-  // $('#loading').removeClass('d-none');
-  // $('#loading').fadeIn(0)
-
-
-  // $('#loading').fadeOut(500, () => {
-  //   $('#loading').addClass('d-none')
-  // })
-
-
-
-
-
-
-
   function nameRegexValid() {
     return (/^[a-zA-Z ]+$/.test(document.getElementById("Name").value))
   }
@@ -733,55 +690,4 @@ loadFadeIn()
   }
   // // // ===============================================End Get Contacts==========================================
 
-
-
-
 });
-
-
-// https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// })
